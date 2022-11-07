@@ -1,4 +1,4 @@
-# Metacritic Movies Web Scraper
+# metacritic-movies
 This project uses Python and regular expressions to create a web scraper that searches for movie titles, dates, descriptions, metascores, and images in Metacritic. It gets the Metacritic url and constructs a list of movies from a particular year and page and then writes it to a csv file. It then reads the file and performs an analysis on the data.
 
 The project is built using Python and Regual Expressions in Jupyter Notebook.
