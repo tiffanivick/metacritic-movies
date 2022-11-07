@@ -5,7 +5,7 @@ The project is built using Python and Regual Expressions in Jupyter Notebook.
 
 ## Getting Started
 
-Imports needed to run this program: 
+Imports used to run this program: 
 - re
 - urlib3
 - certifi
