@@ -74,7 +74,7 @@ Add year and month columns to dataframe
 metacritic['year'] = metacritic.release_date.dt.year
 metacritic['month'] = metacritic.release_date.dt.month
 ```
-![Dataframe Head](/Users/tiffanivick/Desktop/img.jpg?raw=True)
+![img](https://user-images.githubusercontent.com/28819338/200712042-68c0142b-6138-4b94-9c23-cee56d5ed00a.jpg)
 
 ## License
 
