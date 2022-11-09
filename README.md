@@ -31,6 +31,10 @@ To install in terminal:
 
 ## How To Use
 
+This project uses two files, one for the scraper and another for the analysis.
+
+### metacritic-scraper
+
 Connect to MongoDB
 ```
 with open("/fileLocation/credentialsFileName.json") as f:
@@ -49,6 +53,28 @@ Get the Metacritic url
 ```
 url = "https://www.metacritic.com/browse/movies/score/metascore/year/filtered?year_selected=(year)&sort=desc&view=detailed&page=(page)"
 ```
+### metacritic-analysis
+
+Retrieve credentials from json credentials file stored on local computer and fetch the MongoDB collection
+```
+# Retrieve credentials
+with open("/fileLocation/credentialsFileName.json") as f:
+  data = json.load(f)
+  mongo_connection_string = data ['mongodb']
+  
+# Fetch the database named "DB1"
+client = pymongo.MongoClient(mongo_connection_string, tlsCAFile=certifi.where())
+db1_database = client['databaseName']
+metacritic_data = db1_database['collectionName']
+metacritic = pd.DataFrame(metacritic_data.find())
+```
+
+Add year and month columns to dataframe
+```
+metacritic['year'] = metacritic.release_date.dt.year
+metacritic['month'] = metacritic.release_date.dt.month
+```
+![Dataframe Head](/Users/tiffanivick/Desktop/img.jpg?raw=True)
 
 ## License
 
